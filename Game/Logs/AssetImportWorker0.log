@@ -180,3 +180,99 @@ Received Import Request.
   path: Assets/Scenes/Level 3.unity
   artifactKey: Guid(5d72370af76e0403498ad9688f22536f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Level 3.unity using Guid(5d72370af76e0403498ad9688f22536f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41e5b89f8ee80aa47ab53858a8cb71e4') in 0.001308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3043.593830 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/sofa_1.prefab
+  artifactKey: Guid(7ea1b4827d80a8c46807bd4db372acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/sofa_1.prefab using Guid(7ea1b4827d80a8c46807bd4db372acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57a7941c8041a8cf6defd87aeb549e1c') in 1.212160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.076068 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/sofa_2.prefab
+  artifactKey: Guid(fe08cdc5ed410fe4682d96a10cffea7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/sofa_2.prefab using Guid(fe08cdc5ed410fe4682d96a10cffea7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bf7834ee04df788bf6a6831d4114e4d') in 0.035449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.769475 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/table_1.prefab
+  artifactKey: Guid(de56919f78259af428f6dcc83528f34f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/table_1.prefab using Guid(de56919f78259af428f6dcc83528f34f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a0ffdbea50d0251d039772ef3f137c') in 0.019859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.684224 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/table_2.prefab
+  artifactKey: Guid(84b57e7a448f7b944a041fc81a9af2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/table_2.prefab using Guid(84b57e7a448f7b944a041fc81a9af2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '995617798dca369e1c8f67dcebf452e8') in 0.020123 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.815986 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/table_3.prefab
+  artifactKey: Guid(23bb5aee7ad881b40a8a83e64b74df4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/table_3.prefab using Guid(23bb5aee7ad881b40a8a83e64b74df4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b06605326b6a71ed76e825706c0a457') in 0.020792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.563552 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/table_4.prefab
+  artifactKey: Guid(471d836b3f009df439f3a4a7f5f72c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/table_4.prefab using Guid(471d836b3f009df439f3a4a7f5f72c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6644322ba0f53a5e3c4246f7b132b2b') in 0.021960 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 258.052843 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/commode_1.prefab
+  artifactKey: Guid(c03f933c52ef5244e9e4f6d939021060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/commode_1.prefab using Guid(c03f933c52ef5244e9e4f6d939021060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67e873b2e5c5278debc860b01b9554fc') in 0.337000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.577535 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/commode_2.prefab
+  artifactKey: Guid(74c90628c4e104842901b69c75100c78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/commode_2.prefab using Guid(74c90628c4e104842901b69c75100c78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07aad3a8a511c55b9a8f6faca3926b13') in 0.024967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.646423 seconds.
+  path: Assets/NextGen Furniture Pack/Materials
+  artifactKey: Guid(65fcc707d0d4b468cb8a1b702218a54f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Materials using Guid(65fcc707d0d4b468cb8a1b702218a54f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef485303971e0d01f3506d79496a933') in 0.000814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 441.529366 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/chair_6.prefab
+  artifactKey: Guid(535be56ea59d04247b0162c9b514d302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/chair_6.prefab using Guid(535be56ea59d04247b0162c9b514d302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f94b976796cf60789ac8d205a564c28') in 0.031910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.670846 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/chair_5.prefab
+  artifactKey: Guid(c831c4b4f99733745903517caab7d07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/chair_5.prefab using Guid(c831c4b4f99733745903517caab7d07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b799b86a80533f04dd256548c4760ef') in 0.021574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.669127 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/chair_3.prefab
+  artifactKey: Guid(29c22c62aae5ba44d900a13904129237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/chair_3.prefab using Guid(29c22c62aae5ba44d900a13904129237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd25a0e1c2e2336bf9ec4d43081387322') in 0.022681 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.646283 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/chair_2.prefab
+  artifactKey: Guid(22ff2c5264001b243b22f24c9424a730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/chair_2.prefab using Guid(22ff2c5264001b243b22f24c9424a730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e403aa562874ade19872de45084832c') in 0.020890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.634266 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/chair_1.prefab
+  artifactKey: Guid(d20f3b1f8fd21804cb65f71309e9bf95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/chair_1.prefab using Guid(d20f3b1f8fd21804cb65f71309e9bf95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fda175613715625278dc563e4a23745b') in 0.021807 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.345175 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/chair_7.prefab
+  artifactKey: Guid(93954f31895250443829c4fe8e8f5961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/chair_7.prefab using Guid(93954f31895250443829c4fe8e8f5961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd30fb666a187310bdfae6160d211784') in 0.022036 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 143.098530 seconds.
+  path: Assets/NextGen Furniture Pack/Prefabs/chair_4.prefab
+  artifactKey: Guid(52c5e5256a58df2448d0ef4c2038d4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NextGen Furniture Pack/Prefabs/chair_4.prefab using Guid(52c5e5256a58df2448d0ef4c2038d4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a60a90ff4fcd1fd5634ff7499988c90c') in 0.024109 seconds 
