@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1124736370602099156}
+  - component: {fileID: 1392058328}
+  - component: {fileID: 1392058326}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -32,6 +34,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1392058328
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049210454278468946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.27962288
+  m_Height: 0.9749282
+  m_Direction: 1
+  m_Center: {x: -0.261569, y: 0.052847356, z: 0.21349859}
+--- !u!114 &1392058326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049210454278468946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a354f97b02eb02941bbdf0c4344ae065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 3888a1e1c52793144a6d07b8c508772e, type: 3}
+  value: 0
 --- !u!1 &2495402964029302575
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +375,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1234
+  m_VersionIndex: 1240
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -436,7 +466,7 @@ MeshCollider:
   m_GameObject: {fileID: 2495402964029302575}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -486,7 +516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6909435915020581922}
   m_LocalRotation: {x: 0.4069104, y: -0, z: -0.9134681, w: 0}
-  m_LocalPosition: {x: 0.025999814, y: -0.070999995, z: -0.20599985}
+  m_LocalPosition: {x: -0.007, y: -0.070999995, z: -0.017}
   m_LocalScale: {x: 1.0000002, y: 1.0000005, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -505,8 +535,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.4431373, g: 0.38431376, b: 0.20392159, a: 1}
-  m_Intensity: 0.5
-  m_Range: 5
+  m_Intensity: 5
+  m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
