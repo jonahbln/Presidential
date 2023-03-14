@@ -41342,10 +41342,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ballien
       objectReference: {fileID: 0}
-    - target: {fileID: 896032092567424618, guid: 3dfff490fd70575459365abd10ddb152, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6107786880612714482, guid: 3dfff490fd70575459365abd10ddb152, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -41389,18 +41385,6 @@ PrefabInstance:
     - target: {fileID: 6107786880612714482, guid: 3dfff490fd70575459365abd10ddb152, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7743354746248636800, guid: 3dfff490fd70575459365abd10ddb152, type: 3}
-      propertyPath: forceAmount
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7743354746248636800, guid: 3dfff490fd70575459365abd10ddb152, type: 3}
-      propertyPath: fireInterval
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9038759629531355469, guid: 3dfff490fd70575459365abd10ddb152, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2955
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dfff490fd70575459365abd10ddb152, type: 3}
