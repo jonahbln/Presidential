@@ -6,7 +6,7 @@ public class PickupBehavior : MonoBehaviour
 {
     public AudioClip pickupSound;
 
-    public int value = 0;
+    public int value = 20;
 
     void Start()
     {
@@ -26,6 +26,7 @@ public class PickupBehavior : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position);
             gameObject.GetComponentInChildren<Animator>().SetTrigger("Pickup");
+            other.GetComponent<PlayerHealth>().AddHealth(value);
             Destroy(gameObject, .5f);
         }
     }

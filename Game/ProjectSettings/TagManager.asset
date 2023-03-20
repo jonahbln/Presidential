@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - wanderPoint
-  - Ball
   - Enemy
+  - EnemyBall
+  - PlayerBall
   layers:
   - Default
   - TransparentFX
