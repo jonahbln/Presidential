@@ -10,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
     public int startHealth = 100;
     public Slider healthSlider;
     public GameObject pickupDrop;
+    public GameObject deathPrefab;
+    public AudioClip deathClip;
 
     int currentHealth;
 
@@ -23,23 +25,24 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth <= 0)
+        {
+            AlienSpawner.numberKilled++;
+            Instantiate(pickupDrop, transform.position, transform.rotation);
+            GameObject g = Instantiate(deathPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
+            Destroy(g, 1f);
+            AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position);
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (currentHealth <= 0)
-        {
-            //enemy death SFX
-            Instantiate(pickupDrop, transform.position, transform.rotation);
-            Destroy(gameObject, 0.15f);
-        }
-
         if (collision.gameObject.CompareTag("PlayerBall"))
         {
             currentHealth -= 10;
-            // enemy hit SFX
+          
         }
 
         healthSlider.value = currentHealth;

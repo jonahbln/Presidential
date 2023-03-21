@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{195F2307-3EDB-2E47-CEE2-9B166DE32B11}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FirstPersonMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyAI.cs">
     <Files>
       <File FileName="Assets/Scripts/HealthLookAt.cs" Line="21" Column="34" />
-      <File FileName="Assets/Scripts/RacketBehavior.cs" />
-      <File FileName="Assets/RacketHitBack.cs" />
+      <File FileName="Assets/Scripts/RacketBehavior.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerHealth.cs" Line="9" Column="1" />
-      <File FileName="Assets/Scripts/FirstPersonMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnemyHealth.cs" Line="30" Column="41" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AlienSpawner.cs" Line="25" Column="22" />
+      <File FileName="Assets/Scripts/EnemyAI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp.Player PreferredExecutionTarget="3651c44d-ec1e-4e87-9fe4-82ff22147a38" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp.Player PreferredExecutionTarget="c5ce2c0c-962b-483a-ba7d-92f5ffcbbd85" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>Assembly-CSharp.csproj</String>
