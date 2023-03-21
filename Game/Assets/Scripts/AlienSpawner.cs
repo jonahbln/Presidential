@@ -10,6 +10,7 @@ public class AlienSpawner : MonoBehaviour
     public int spawnTotalNumber = 4;
     public static int numberToKill = 5;
     public static int numberKilled;
+    bool won = false;
 
     void Start()
     {
@@ -20,24 +21,22 @@ public class AlienSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(numberKilled >= numberToKill)
+        if(numberKilled >= numberToKill && !won)
         {
-            //you win
+            FindObjectOfType<LevelManager>().Win();
+            won = true;
         }
     }
 
     void SpawnEnemy()
     {
-        if(spawnTotalNumber > 0)
+        if(numberKilled < numberToKill)
         {
             Vector3 enemyPosition = transform.position;
 
             GameObject spawnedEnemy = Instantiate(enemyPrefab, enemyPosition, transform.rotation) as GameObject;
 
             spawnedEnemy.transform.parent = gameObject.transform;
-
-            spawnTotalNumber--;
         }
-
     }
 }

@@ -27,17 +27,18 @@ public class PlayerHealth : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (currentHealth <= 0)
-        {
-            // loss condition
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            FindObjectOfType<LevelManager>().Die();
-        }
+
 
         if (collision.gameObject.CompareTag("EnemyBall"))
         {
-            currentHealth -= 10;
+            currentHealth -= 20;
             // player hit SFX
+            if (currentHealth <= 0)
+            {
+                // loss condition
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                FindObjectOfType<LevelManager>().Die();
+            }
         }
 
         healthSlider.value = currentHealth;

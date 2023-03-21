@@ -26789,14 +26789,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  enemySpeed: 5
-  chaseDistance: 30
+  enemySpeed: 7.5
+  chaseDistance: 32.5
   attackDistance: 17.5
   player: {fileID: 0}
   ballProjectile: {fileID: 3358411128351058965, guid: aaa17e8706a6b874c910bc436560a0ae, type: 3}
   projectileStartPoint: {fileID: 2252955322839734102}
-  shootRate: 2
-  projSpeed: 5
+  shootRate: 1.5
+  projSpeed: 6
 --- !u!114 &271185307526727645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26825,5 +26825,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2755222, y: 2.7534559, z: 1.5018955}
-  m_Center: {x: 0.026717305, y: 1.3676397, z: -0.2509477}
+  m_Size: {x: 4.482249, y: 3.4645276, z: 1.9981347}
+  m_Center: {x: -0.07078004, y: 1.7231755, z: -0.12263256}

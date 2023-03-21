@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             AlienSpawner.numberKilled++;
-            Instantiate(pickupDrop, transform.position, transform.rotation);
+            Instantiate(pickupDrop, transform.position + new Vector3(0, 1, 0), transform.rotation);
             GameObject g = Instantiate(deathPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(g, 1f);
             AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position);
