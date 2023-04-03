@@ -12,8 +12,12 @@ public class RacketBehavior : MonoBehaviour
     public Camera cam;
     public GameObject ballPrefab;
     public AudioClip hitSFX;
+
+    public bool moving;
+
     void Start()
     {
+        moving = false;
         anim = GetComponent<Animator>();
         cam = Camera.main;
     }
@@ -36,7 +40,25 @@ public class RacketBehavior : MonoBehaviour
             AudioSource.PlayClipAtPoint(backSwing, transform.position);
             Shoot();
             Invoke("Delay", delayTime);
+        } else if (Input.GetKey(KeyCode.LeftControl))
+        {
+            anim.SetInteger("SwingInt", 3);
+            canSwing = false;
+            PlayerController.speed = 5f;
+        } else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            anim.SetInteger("SwingInt", 0);
+            canSwing = true;
+            PlayerController.speed = 10f;
+        } else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            PlayerController.speed = 15f;
+        } else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            PlayerController.speed = 10f;
         }
+
+        anim.SetBool("Moving", moving);
     }
 
     void Delay()

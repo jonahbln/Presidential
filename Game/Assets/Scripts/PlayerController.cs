@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10f;
+    public static float speed = 10f;
     public float jumpHeight = 1f;
     public float gravity = 9.8f;
     public float airControl = 10f;
@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
             walking = false;
         }
         input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
+
+        GetComponentInChildren<RacketBehavior>().moving = walking;
+
 
         if (controller.isGrounded)
         {
