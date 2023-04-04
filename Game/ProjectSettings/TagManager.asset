@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - EnemyBall
   - PlayerBall
+  - Racket
   layers:
   - Default
   - TransparentFX

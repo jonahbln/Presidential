@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject pickupDrop;
     public GameObject deathPrefab;
     public AudioClip deathClip;
+    public float knockBack = 20f;
 
     int currentHealth;
 
@@ -42,7 +43,11 @@ public class EnemyHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerBall"))
         {
             currentHealth -= 10;
-          
+
+        }
+        if (collision.gameObject.CompareTag("Racket"))
+        {
+            currentHealth -= 5;  
         }
 
         healthSlider.value = currentHealth;

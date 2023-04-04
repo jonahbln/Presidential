@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -32,16 +33,23 @@ public class EnemyAI : MonoBehaviour
     float elapsedTime = 0f;
     float origY;
 
+    NavMeshAgent agent;
+
     void Start()
     {
         Initialize();
+    }
+
+    void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        switch(currentState)
+        switch (currentState)
         {
             case FSMStates.Patrol:
                 UpdatePatrolState();
@@ -99,23 +107,10 @@ public class EnemyAI : MonoBehaviour
         anim.SetInteger("animState", 3);
 
         EnemySpellCast();
+
+
     }
 
-    private void EnemySpellCast()
-    {
-        if(elapsedTime >= shootRate)
-        {
-            var animDuration = anim.GetCurrentAnimatorStateInfo(0).length;
-            Invoke("SpellCasting", animDuration);
-            elapsedTime = 0f;
-        }
-    }
-
-    void SpellCasting()
-    {
-        GameObject proj = Instantiate(ballProjectile, projectileStartPoint.transform.position, projectileStartPoint.transform.rotation);
-        proj.GetComponent<Rigidbody>().AddForce(proj.transform.forward * projSpeed, ForceMode.Impulse);
-    }
 
     private void UpdateChaseState()
     {
@@ -133,8 +128,11 @@ public class EnemyAI : MonoBehaviour
 
         FaceTarget(nextDestination);
 
-        transform.position = Vector3.MoveTowards(transform.position, nextDestination, Time.deltaTime * enemySpeed);
-        transform.position = new Vector3(transform.position.x, origY, transform.position.z);
+        /*transform.position = Vector3.MoveTowards(transform.position, nextDestination, Time.deltaTime * enemySpeed);
+        transform.position = new Vector3(transform.position.x, origY, transform.position.z);*/
+
+        agent.destination = nextDestination;
+        agent.stoppingDistance = attackDistance;
     }
 
     private void UpdatePatrolState()
@@ -142,7 +140,7 @@ public class EnemyAI : MonoBehaviour
 
         anim.SetInteger("animState", 1);
 
-        if(Vector3.Distance(transform.position, nextDestination) < 1)
+        if (Vector3.Distance(transform.position, nextDestination) < 1)
         {
             FindNextPoint();
         }
@@ -153,8 +151,11 @@ public class EnemyAI : MonoBehaviour
 
         FaceTarget(nextDestination);
 
-        transform.position = Vector3.MoveTowards(transform.position, nextDestination, Time.deltaTime * enemySpeed);
-        transform.position = new Vector3(transform.position.x, origY, transform.position.z);
+        /*transform.position = Vector3.MoveTowards(transform.position, nextDestination, Time.deltaTime * enemySpeed);
+        transform.position = new Vector3(transform.position.x, origY, transform.position.z);*/
+
+        agent.destination = nextDestination;
+        agent.stoppingDistance = 0f;
     }
 
     private void FaceTarget(Vector3 target)
@@ -169,7 +170,7 @@ public class EnemyAI : MonoBehaviour
     {
         nextDestination = wanderPoints[currentDestinationIndex].transform.position;
 
-        currentDestinationIndex = (currentDestinationIndex + UnityEngine.Random.Range(1,wanderPoints.Length - 1)) % wanderPoints.Length;
+        currentDestinationIndex = (currentDestinationIndex + UnityEngine.Random.Range(1, wanderPoints.Length - 1)) % wanderPoints.Length;
     }
 
     private void OnDrawGizmos()
@@ -179,5 +180,21 @@ public class EnemyAI : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, chaseDistance);
+    }
+
+    private void EnemySpellCast()
+    {
+        if (elapsedTime >= shootRate)
+        {
+            var animDuration = anim.GetCurrentAnimatorStateInfo(0).length;
+            Invoke("SpellCasting", animDuration);
+            elapsedTime = 0f;
+        }
+    }
+
+    void SpellCasting()
+    {
+        GameObject proj = Instantiate(ballProjectile, projectileStartPoint.transform.position, projectileStartPoint.transform.rotation);
+        proj.GetComponent<Rigidbody>().AddForce(proj.transform.forward * projSpeed, ForceMode.Impulse);
     }
 }

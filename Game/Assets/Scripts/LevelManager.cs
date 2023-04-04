@@ -52,8 +52,8 @@ public class LevelManager : MonoBehaviour
     public void Win()
     {
         AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
-        gameText.text = "MORE LEVELS COMING SOON!";
+        gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
-        Invoke("LoadCurrentLevel", 5f);
+        Invoke("LoadNextLevel", 2f);
     }
 }
