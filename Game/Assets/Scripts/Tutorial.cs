@@ -9,7 +9,9 @@ public class Tutorial : MonoBehaviour
 {
     public string[] tutorialText;
     public TextMeshProUGUI textBox;
-    public float typingSpeed = 0.4f;
+    public float typingDelay = 0.05f;
+    public float lineDelay = 5f;
+    public AudioSource typeSource;
 
     private bool canContinueToNextLine;
     private int i = 0;
@@ -25,16 +27,19 @@ public class Tutorial : MonoBehaviour
     {
         print("IH");
         textBox.GetComponent<TextMeshProUGUI>().text = "";
+        typeSource.Play();
 
         // display 1 letter at a time
         foreach (char letter in text.ToCharArray())
         {
             print("HEY");
             textBox.GetComponent<TextMeshProUGUI>().text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSeconds(typingDelay);
         }
 
-        Invoke("enableTyping", typingSpeed * 8);
+        typeSource.Pause();
+
+        Invoke("enableTyping", lineDelay);
     }
 
     private void enableTyping()
