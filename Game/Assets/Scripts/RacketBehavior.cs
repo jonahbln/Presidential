@@ -43,13 +43,13 @@ public class RacketBehavior : MonoBehaviour
                 Shoot();
                 Invoke("Delay", delayTime);
             }
-            else if (Input.GetKey(KeyCode.LeftControl))
+            else if (Input.GetKey(KeyCode.E))
             {
                 anim.SetInteger("SwingInt", 3);
                 canSwing = false;
                 PlayerController.speed = 5f;
             }
-            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            else if (Input.GetKeyUp(KeyCode.E))
             {
                 anim.SetInteger("SwingInt", 0);
                 canSwing = true;
