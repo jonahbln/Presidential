@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
@@ -33,12 +34,19 @@ public class Tutorial : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        Invoke("enableTyping", typingSpeed * 5);
+        Invoke("enableTyping", typingSpeed * 8);
     }
 
     private void enableTyping()
     {
-        StartCoroutine(DisplayText(tutorialText[i]));
-        i++;
+        if(i >= tutorialText.Length)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            StartCoroutine(DisplayText(tutorialText[i]));
+            i++;
+        }
     }
 }

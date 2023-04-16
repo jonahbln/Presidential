@@ -21,8 +21,11 @@ public class ShootProjectile : MonoBehaviour
 
     void fire()
     {
-        GameObject proj = Instantiate(projectilePrefab, transform.position, transform.localRotation);
+        if(!LevelManager.gamePaused)
+        {
+            GameObject proj = Instantiate(projectilePrefab, transform.position, transform.localRotation);
 
-        proj.GetComponent<Rigidbody>().AddForce(transform.forward * forceAmount, ForceMode.Impulse);
+            proj.GetComponent<Rigidbody>().AddForce(transform.forward * forceAmount, ForceMode.Impulse);
+        }
     }
 }

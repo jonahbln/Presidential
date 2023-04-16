@@ -24,66 +24,69 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        if (moveHorizontal!= 0 || moveVertical != 0)
+        if (!LevelManager.gamePaused)
         {
-            walking = true;
-        }
-        else
-        {
-            walking = false;
-        }
-        input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        GetComponentInChildren<RacketBehavior>().moving = walking;
-
-
-        if (controller.isGrounded)
-        {
-
-
-            if (!grounded)
+            if (moveHorizontal != 0 || moveVertical != 0)
             {
-                grounded = true;
-                // land SFX
-                transform.GetChild(1).GetChild(1).gameObject.GetComponent<AudioSource>().Play();
-            }
-
-            moveDirection = input;
-
-            if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
-                // jump SFX
-                transform.GetChild(1).GetChild(2).gameObject.GetComponent<AudioSource>().Play();
+                walking = true;
             }
             else
             {
-                moveDirection.y = 0.0f;
+                walking = false;
             }
+            input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
 
-            if (walking)
+            GetComponentInChildren<RacketBehavior>().moving = walking;
+
+
+            if (controller.isGrounded)
             {
-                // walk SFX
-                transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 1;
+
+
+                if (!grounded)
+                {
+                    grounded = true;
+                    // land SFX
+                    transform.GetChild(1).GetChild(1).gameObject.GetComponent<AudioSource>().Play();
+                }
+
+                moveDirection = input;
+
+                if (Input.GetButton("Jump"))
+                {
+                    moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
+                    // jump SFX
+                    transform.GetChild(1).GetChild(2).gameObject.GetComponent<AudioSource>().Play();
+                }
+                else
+                {
+                    moveDirection.y = 0.0f;
+                }
+
+                if (walking)
+                {
+                    // walk SFX
+                    transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 1;
+                }
+                else
+                {
+                    transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0;
+                }
             }
             else
             {
-                transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0;
+
+                grounded = false;
+                input.y = moveDirection.y;
+                moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
             }
+
+            moveDirection.y -= gravity * Time.deltaTime;
+
+            controller.Move(moveDirection * speed * Time.deltaTime);
         }
-        else
-        {
-
-            grounded = false;
-            input.y = moveDirection.y;
-            moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
-        }
-
-        moveDirection.y -= gravity * Time.deltaTime;
-
-        controller.Move(moveDirection * speed * Time.deltaTime);
     }
 }

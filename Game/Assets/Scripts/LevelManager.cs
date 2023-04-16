@@ -11,6 +11,10 @@ public class LevelManager : MonoBehaviour
     public AudioClip winSFX;
     public AudioClip lossSFX;
     public Text gameText;
+    public static float mouseSensitivity = 50f;
+    public Canvas pauseMenu;
+
+    public static bool gamePaused = false;
     void Start()
     {
         currentLevel = SceneManager.GetActiveScene().name;
@@ -19,15 +23,33 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape) && !gamePaused)
+        {
+            PauseGame();
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void PauseGame()
     {
-        if(other.gameObject.CompareTag("Player") && nextLevel != "")
-        {
-            LoadNextLevel();
-        }
+        gamePaused = true;
+        pauseMenu.gameObject.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void ResumeGame()
+    {
+        gamePaused = false;
+        pauseMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void ExitToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void LoadNextLevel()
@@ -55,5 +77,10 @@ public class LevelManager : MonoBehaviour
         gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
         Invoke("LoadNextLevel", 2f);
+    }
+
+    public void setSensitivity(float sens)
+    {
+        mouseSensitivity = sens;
     }
 }
