@@ -14,9 +14,13 @@ public class LevelManager : MonoBehaviour
     public static float mouseSensitivity = 50f;
     public Canvas pauseMenu;
 
-    public static bool gamePaused = false;
+    public static bool gamePaused;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        gamePaused = false;
+        Time.timeScale = 1;
         currentLevel = SceneManager.GetActiveScene().name;
     }
 

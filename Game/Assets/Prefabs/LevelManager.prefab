@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899d5237bebfe924685083032276b0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Level 2
+  nextLevel: Level 3
   winSFX: {fileID: 8300000, guid: f0209cc2b7163a84ea38f8a247208b95, type: 3}
   lossSFX: {fileID: 8300000, guid: 007ac116036566a4eafa9ba47f715603, type: 3}
   gameText: {fileID: 0}

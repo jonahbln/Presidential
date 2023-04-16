@@ -150,7 +150,7 @@ public class EnemyAI : MonoBehaviour
             currentState = FSMStates.Chase;
         }
 
-        FaceTarget(nextDestination);
+        //FaceTarget(nextDestination);
 
         /*transform.position = Vector3.MoveTowards(transform.position, nextDestination, Time.deltaTime * enemySpeed);
         transform.position = new Vector3(transform.position.x, origY, transform.position.z);*/
