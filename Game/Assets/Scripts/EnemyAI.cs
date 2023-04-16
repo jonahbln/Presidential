@@ -38,6 +38,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         Initialize();
+        
     }
 
     void Awake()
