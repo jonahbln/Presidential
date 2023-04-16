@@ -408,3 +408,15 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 927.279760 seconds.
+  path: Assets/Prefabs/Boss Alien.prefab
+  artifactKey: Guid(8170b71e9a4492440bcb77c5be57c7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Boss Alien.prefab using Guid(8170b71e9a4492440bcb77c5be57c7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '265e0bf3e055b0bf6715bea8a49fbaed') in 0.598140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.603733 seconds.
+  path: Assets/Scenes/Level 1.unity
+  artifactKey: Guid(d57ac03845e014bf1888a3e50e88451a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1.unity using Guid(d57ac03845e014bf1888a3e50e88451a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92ef1b711b90ea3aa5a82de05b29a8d5') in 0.001770 seconds 
