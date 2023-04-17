@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!LevelManager.gamePaused)
         {
+            GetComponent<AudioSource>().volume = 1f;
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
 
@@ -87,6 +88,11 @@ public class PlayerController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
 
             controller.Move(moveDirection * speed * Time.deltaTime);
+        }
+        else
+        {
+            GetComponent<AudioSource>().volume = 0f;
+            transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0;
         }
     }
 }

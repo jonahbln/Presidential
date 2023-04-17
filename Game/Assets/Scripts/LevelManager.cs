@@ -17,11 +17,19 @@ public class LevelManager : MonoBehaviour
     public static bool gamePaused;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        currentLevel = SceneManager.GetActiveScene().name;
         gamePaused = false;
         Time.timeScale = 1;
-        currentLevel = SceneManager.GetActiveScene().name;
+        if (currentLevel != "Main Menu")
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     // Update is called once per frame
