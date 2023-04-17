@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0;
     }
 
     // Update is called once per frame
@@ -69,12 +68,16 @@ public class PlayerController : MonoBehaviour
 
                 if (walking)
                 {
+                    if (!transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().isPlaying)
+                    {
+                        transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().Play();
+                    }
                     // walk SFX
-                    transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 1;
+                    transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().UnPause();
                 }
                 else
                 {
-                    transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0;
+                    transform.GetChild(1).GetChild(0).gameObject.GetComponent<AudioSource>().Pause();
                 }
             }
             else

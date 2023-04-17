@@ -26,7 +26,6 @@ public class PresidentBehavior : MonoBehaviour
     {
         if(transformation && !calledAnim)
         {
-            Debug.Log("LOL");
             anim.SetTrigger("Transformation");
             calledAnim = true;
             Destroy(gameObject, 4.5f);

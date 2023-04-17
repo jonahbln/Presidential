@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int startHealth = 100;
     public Slider healthSlider;
+    public Image healthImage;
 
     int currentHealth;
     void Start()
@@ -21,27 +22,36 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (LevelManager.gamePaused)
+        {
+            healthSlider.gameObject.SetActive(false);
+            healthImage.gameObject.SetActive(false);
+        }
+        else
+        {
+            healthImage.gameObject.SetActive(true);
+            healthSlider.gameObject.SetActive(true);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-
-
-
-        if (collision.gameObject.CompareTag("EnemyBall"))
-        {
-            currentHealth -= 20;
-            // player hit SFX
-            if (currentHealth <= 0)
+            if (collision.gameObject.CompareTag("EnemyBall"))
             {
-                // loss condition
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                FindObjectOfType<LevelManager>().Die();
+                currentHealth -= 20;
+                // player hit SFX
+                if (currentHealth <= 0)
+                {
+                    // loss condition
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    FindObjectOfType<LevelManager>().Die();
+                }
             }
-        }
 
-        healthSlider.value = currentHealth;
+            healthSlider.value = currentHealth;
+
+
     }
 
     public void AddHealth(int value)

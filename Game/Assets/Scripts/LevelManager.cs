@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     public Canvas pauseMenu;
 
     public static bool gamePaused;
-    void Start()
+    void Awake()
     {
         currentLevel = SceneManager.GetActiveScene().name;
         gamePaused = false;
@@ -86,9 +86,16 @@ public class LevelManager : MonoBehaviour
     public void Win()
     {
         AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
-        gameText.text = "YOU WIN!";
-        gameText.gameObject.SetActive(true);
-        Invoke("LoadNextLevel", 2f);
+        if(nextLevel != "gameOver")
+        {
+            gameText.text = "LEVEL CLEAR";
+            gameText.gameObject.SetActive(true);
+            Invoke("LoadNextLevel", 2f);
+        }
+        else
+        {
+            FindObjectOfType<DialogueManager>().GameOver();
+        }
     }
 
     public void setSensitivity(float sens)
