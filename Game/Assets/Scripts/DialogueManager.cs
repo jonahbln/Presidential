@@ -73,9 +73,9 @@ public class DialogueManager : MonoBehaviour
     {
         LevelManager.gamePaused = true;
         dialogueText[0] = "AGHHHHHHHHH NOOOOOOOO!";
-        dialogueText[1] = "You will never beat the balliens!";
-        dialogueText[2] = "We will only come back stronger than ever!";
-        dialogueText[3] = "I will see you again!";
+        dialogueText[1] = "You will never beat the Balliens!";
+        dialogueText[2] = "We come back stronger than ever!";
+        dialogueText[3] = "I will see you again Dennis!";
         i = 0;
         StartCoroutine(DisplayText(dialogueText[i]));
     }
