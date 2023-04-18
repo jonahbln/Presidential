@@ -29,21 +29,32 @@ public class BossAI : MonoBehaviour
     float elapsedTime = 0f;
     float origY;
 
+    public float moveSpeed = 5f;
+
+    public bool rolling = false;
+    bool appQuit = false;
+
     NavMeshAgent agent;
 
     void Start()
     {
+        appQuit = false;
+        rolling = false;
         Initialize();
 
     }
 
     void Awake()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //transform.LookAt(player.transform.position);
+
         switch (currentState)
         {
             case FSMStates.Patrol:
@@ -66,7 +77,7 @@ public class BossAI : MonoBehaviour
     private void Initialize()
     {
         currentState = FSMStates.Patrol;
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         levelManager = GameObject.FindGameObjectWithTag("LevelManager");
         origY = transform.position.y;
@@ -74,6 +85,7 @@ public class BossAI : MonoBehaviour
 
     private void UpdateDeadState()
     {
+        rolling = false;
         anim.SetInteger("animState", 4);
         Destroy(gameObject, 2f);
     }
@@ -82,7 +94,7 @@ public class BossAI : MonoBehaviour
     {
 
         anim.SetInteger("animState", 3);
-
+        rolling = false;
 
         if (elapsedTime > 2f)
         {
@@ -94,8 +106,15 @@ public class BossAI : MonoBehaviour
 
     }
 
+    private void OnApplicationQuit()
+    {
+        appQuit = true;
+    }
+
     private void UpdateChaseState()
     {
+
+        rolling = true;
 
         if (elapsedTime > 8f)
         {
@@ -103,14 +122,17 @@ public class BossAI : MonoBehaviour
             currentState = FSMStates.Attack;
         }
 
+        FaceTarget(player.transform.position);
+
         anim.SetInteger("animState", 2);
 
-        FaceTarget(player.transform.position);
+        //transform.position = transform.forward * moveSpeed * Time.deltaTime;
 
     }
 
     private void UpdatePatrolState()
     {
+        rolling = false;
 
         anim.SetInteger("animState", 1);
 
@@ -119,6 +141,7 @@ public class BossAI : MonoBehaviour
             elapsedTime = 0f;
             currentState = FSMStates.Chase;
         }
+
     }
 
     private void FaceTarget(Vector3 target)
@@ -130,7 +153,7 @@ public class BossAI : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (PresidentBehavior.appQuit) return; 
+        if (appQuit) return;
         GameObject g = Instantiate(explosion, transform.position, transform.rotation);
         Destroy(g, 2f);
         levelManager.GetComponent<LevelManager>().Win();

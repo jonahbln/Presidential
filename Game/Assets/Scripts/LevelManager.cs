@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     public static float mouseSensitivity = 50f;
     public Canvas pauseMenu;
 
+    public GameObject dialogueManager;
+
     public static bool gamePaused;
     void Awake()
     {
@@ -94,7 +96,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<DialogueManager>().GameOver();
+            dialogueManager.SetActive(true);
+            dialogueManager.GetComponent<DialogueManager>().GameOver();
         }
     }
 

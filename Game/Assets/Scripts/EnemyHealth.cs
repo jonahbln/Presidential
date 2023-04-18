@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
 
-            if (CompareTag("Boss"))
+            if (gameObject.CompareTag("Boss"))
             {
                 //AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position);
                 GetComponentInParent<BossAI>().Dead();

@@ -15,6 +15,11 @@ public class PresidentBehavior : MonoBehaviour
 
     void Start()
     {
+        GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss");
+        foreach(GameObject g in bosses)
+        {
+            Destroy(g);
+        }
         anim = gameObject.GetComponent<Animator>();
         transformation = false;
         calledAnim = false;
