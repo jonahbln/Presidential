@@ -1,16 +1,24 @@
-﻿<Properties StartupConfiguration="{195F2307-3EDB-2E47-CEE2-9B166DE32B11}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BossAI.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/RacketBehavior.cs" Line="61" Column="14" />
+      <File FileName="Assets/Scripts/RacketBehavior.cs" Line="76" Column="1" />
       <File FileName="Assets/Scripts/EnemyHealth.cs" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="64" Column="6" />
+      <File FileName="Assets/Scripts/LevelManager.cs" />
       <File FileName="Assets/Scripts/AlienSpawner.cs" />
       <File FileName="Assets/Scripts/PlayerController.cs" />
       <File FileName="Assets/Scripts/EnemyAI.cs" Line="160" Column="6" />
       <File FileName="Assets/Scripts/CrosshairBehavior.cs" Line="42" Column="1" />
       <File FileName="Assets/Scripts/PresidentBehavior.cs" Line="16" Column="17" />
-      <File FileName="Assets/Scripts/BossAI.cs" Line="7" Column="27" />
+      <File FileName="Assets/Scripts/BossAI.cs" Line="112" Column="57" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="22" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Game" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp.Player PreferredExecutionTarget="4631209e-60cb-40c2-a406-faeb3996afab" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

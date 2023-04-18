@@ -80,19 +80,16 @@ public class RacketBehavior : MonoBehaviour
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~LayerMask.GetMask("Enemy")))
             {
-                if (hit.collider.gameObject.CompareTag("Enemy"))
-                {
-                    Vector3 direction = hit.point - transform.position;
-                    direction.y = 0f;
-                    direction.Normalize();
+                Vector3 direction = hit.point - transform.position;
+                direction.y = 0f;
+                direction.Normalize();
 
-                    GameObject ball = Instantiate(ballPrefab, transform.position + direction, Quaternion.identity);
-                    Rigidbody ballRb = ball.GetComponent<Rigidbody>();
-                    ballRb.AddForce(direction * 500f);
-                    AudioSource.PlayClipAtPoint(hitSFX, transform.position);
-                }
+                GameObject ball = Instantiate(ballPrefab, transform.position + direction, Quaternion.identity);
+                Rigidbody ballRb = ball.GetComponent<Rigidbody>();
+                ballRb.AddForce(direction * 500f);
+                AudioSource.PlayClipAtPoint(hitSFX, transform.position);
             }
         }
     }
