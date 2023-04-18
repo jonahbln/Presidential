@@ -16,6 +16,7 @@ public class HealthLookAt : MonoBehaviour
 
     void Update()
     {
+
         Vector3 target = new Vector3(player.transform.position.x,
             transform.position.y, player.transform.position.z);
         transform.LookAt(target);
