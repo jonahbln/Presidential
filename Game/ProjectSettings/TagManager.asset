@@ -9,6 +9,8 @@ TagManager:
   - EnemyBall
   - PlayerBall
   - Racket
+  - Boss
+  - LevelManager
   layers:
   - Default
   - TransparentFX

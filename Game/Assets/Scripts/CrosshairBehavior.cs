@@ -23,7 +23,7 @@ public class CrosshairBehavior : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
             {
-                if (hit.collider.CompareTag("Enemy"))
+                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Boss"))
                 {
                     crosshairImage.GetComponent<RectTransform>().rotation = Quaternion.Lerp(crosshairImage.GetComponent<RectTransform>().rotation, Quaternion.Euler(0, 0, 180), Time.deltaTime * speed);
                     crosshairImage.GetComponent<Image>().color = Color.Lerp(crosshairImage.GetComponent<Image>().color, color2, Time.deltaTime * speed * 2f);

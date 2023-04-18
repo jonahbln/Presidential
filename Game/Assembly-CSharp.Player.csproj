@@ -62,7 +62,7 @@
     <Compile Include="Assets/Scripts/ShootProjectile.cs" />
     <Compile Include="Assets/Scripts/Sensitivity.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
-    <Compile Include="Assets/Scripts/Tutorial.cs" />
+    <Compile Include="Assets/Scripts/DialogueManager.cs" />
     <Compile Include="Assets/Scripts/HealthLookAt.cs" />
     <Compile Include="Assets/Scripts/RacketBehavior.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
@@ -70,12 +70,13 @@
     <Compile Include="Assets/Scripts/DestroyObject.cs" />
     <Compile Include="Assets/Scripts/RacketHitBack.cs" />
     <Compile Include="Assets/Scripts/MainMenu.cs" />
+    <Compile Include="Assets/Scripts/PresidentBehavior.cs" />
     <Compile Include="Assets/Scripts/CrosshairBehavior.cs" />
     <Compile Include="Assets/Scripts/EnemyHealth.cs" />
     <Compile Include="Assets/Scripts/BallDestroy.cs" />
     <Compile Include="Assets/Scripts/MouseLook.cs" />
     <Compile Include="Assets/Scripts/PickupBehavior.cs" />
-    <Compile Include="Assets/Scripts/PresidentBehavior.cs" />
+    <Compile Include="Assets/Scripts/BossAI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

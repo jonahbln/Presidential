@@ -12,7 +12,6 @@ public class EnemyHealth : MonoBehaviour
     public GameObject pickupDrop;
     public GameObject deathPrefab;
     public AudioClip deathClip;
-    public float knockBack = 20f;
 
     int currentHealth;
 
@@ -26,8 +25,16 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (currentHealth <= 0)
         {
+
+            if (CompareTag("Boss"))
+            {
+                //AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position);
+                GetComponentInParent<BossAI>().Dead();
+                return;
+            }
             AlienSpawner.numberKilled++;
             Instantiate(pickupDrop, transform.position + new Vector3(0, 1, 0), transform.rotation);
             GameObject g = Instantiate(deathPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
@@ -44,10 +51,6 @@ public class EnemyHealth : MonoBehaviour
         {
             currentHealth -= 10;
 
-        }
-        if (collision.gameObject.CompareTag("Racket"))
-        {
-            currentHealth -= 5;  
         }
 
         healthSlider.value = currentHealth;

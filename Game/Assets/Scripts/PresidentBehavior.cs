@@ -8,7 +8,7 @@ public class PresidentBehavior : MonoBehaviour
     public static bool transformation = false;
     bool calledAnim = false;
     Animator anim;
-    bool appQuit;
+    public static bool appQuit;
 
     public GameObject boss;
     public GameObject explosion;
